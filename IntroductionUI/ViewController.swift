@@ -13,7 +13,35 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    @IBOutlet var buttonSubmit: UIButton!
+    
+    @IBOutlet var textPrimary: UILabel!
+    @IBOutlet var textSecundaryColor: UILabel!
+    @IBOutlet var textPrimaryColor: UILabel!
+    @IBOutlet var textAplication: UILabel!
+    @IBOutlet var colorWellText: UIColorWell!
+    @IBOutlet var colorWell: UIColorWell!
+    @IBOutlet var textLabel: UILabel!
+    @IBAction func buttonSubmit(_ sender: Any) {
+  
+        
+        
+        if let selectedColor = colorWell.selectedColor {
+            view.backgroundColor = selectedColor
+        } else {
+            view.backgroundColor = UIColor.white
+        }
+        
+        if let selectedColorText = colorWellText.selectedColor{
+            textLabel.textColor = selectedColorText
+            textAplication.textColor = selectedColorText
+            buttonSubmit.tintColor = selectedColorText
+            textSecundaryColor.textColor = selectedColorText
+            textPrimary.textColor = selectedColorText
+        } else{
+            textLabel.textColor = .black
+        }
+        
+    }
 }
 
